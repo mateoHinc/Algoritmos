@@ -4,23 +4,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Menú: \n1. Sumar\n2. Restar\n3. Multiplicar\n4. Dividir\nSeleccione una opción: ");
-        int option = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Ingrese un número para ver su tabla de multiplicar: ");
+        int number = Convert.ToInt32(Console.ReadLine());
 
-        switch (option)
+        for (int i = 1; i <= 10; i++)
         {
-            case 1:
-                Console.Write("Seleccionaste sumar");
-                break;
-            case 2:
-                Console.Write("Seleccionaste restar");
-                break;
-            case 3:
-                Console.Write("Seleccionaste multiplicar");
-                break;
-            default :
-                Console.Write("Seleccionaste dividir");
-                break;
+            int result = number * i;
+            Console.Write(number + " X " + i + " = " + result+"\n");
         }
         
     }
