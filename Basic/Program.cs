@@ -4,25 +4,46 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Ingrese un número: ");
-        int number = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Ingrese un año: ");
+        int year = Convert.ToInt32(Console.ReadLine());
 
-        if (number % 3 == 0 && number % 5 == 0)
+        if (year.ToString().Length == 4)
         {
-            Console.WriteLine($"El número {number} es múltiplo de 5 y 3");
-        }
-        else if (number % 3 == 0)
-        {
-            Console.WriteLine($"El número {number} es múltiplo de 3 pero no de 5");
-        }
-        else if (number % 5 == 0)
-        {
-            Console.WriteLine($"El número {number} es múltiplo de 5 pero no de 3");
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+            {
+                Console.WriteLine($"El año {year} es un año bisiesto");
+            }
+            else
+            {
+                Console.WriteLine($"El año {year} no es un año bisiesto");
+            }
         }
         else
         {
-            Console.WriteLine($"El número {number} no es múltiplo de 5 y 3");
+            Console.WriteLine($"El año {year} no tiene 4 digitos");
         }
     }
 }
+
+/*
+
+if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+es la forma correcta de determinar si un año es bisiesto en 
+el calendario gregoriano. Vamos a descomponerla paso a paso.
+
+Un año es bisiesto si:
+
+1. Es divisible entre 4.
+    (year % 4 == 0)
+    ➤ Ejemplo: 2024 ÷ 4 = 506 → posible bisiesto
+
+2. Excepto si también es divisible entre 100.
+    (year % 100 != 0)
+    ➤ Ejemplo: 1900 es divisible por 4 y por 100 → ❌ no es bisiesto
+
+3. Pero si además es divisible entre 400, sí es bisiesto.
+    (year % 400 == 0)
+    ➤ Ejemplo: 2000 es divisible entre 100 y 400 → ✅ sí es bisiesto
+
+*/
 
