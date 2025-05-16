@@ -9,11 +9,11 @@ class Program
 
         if (number % 2 == 0)
         {
-            Console.Write("El número es par");
+            Console.Write("El número "+number+" es par");
         }
         else
         {
-            Console.Write("El número es impar");
+            Console.Write("El número "+number+" es impar");
         }
     }
 }
