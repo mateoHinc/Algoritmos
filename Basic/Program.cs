@@ -4,23 +4,24 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Ingrese el primer número: ");
-        int number1 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Ingrese un número: ");
+        int number = Convert.ToInt32(Console.ReadLine());
 
-        Console.Write("Ingrese el segundo número: ");
-        int number2 = Convert.ToInt32(Console.ReadLine());
-
-        if (number1 > number2)
+        if (number % 3 == 0 && number % 5 == 0)
         {
-            Console.WriteLine($"El {number1} es mayor que {number2}");
+            Console.WriteLine($"El número {number} es múltiplo de 5 y 3");
         }
-        else if (number2 > number1)
+        else if (number % 3 == 0)
         {
-            Console.WriteLine($"El {number2} es mayor que {number1}");
+            Console.WriteLine($"El número {number} es múltiplo de 3 pero no de 5");
+        }
+        else if (number % 5 == 0)
+        {
+            Console.WriteLine($"El número {number} es múltiplo de 5 pero no de 3");
         }
         else
         {
-            Console.WriteLine("¡Ambos números son iguales!");
+            Console.WriteLine($"El número {number} no es múltiplo de 5 y 3");
         }
     }
 }
