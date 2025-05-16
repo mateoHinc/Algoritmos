@@ -4,18 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        int n, suma = 0, i = 1;
+        Console.Write("Ingrese su edad: ");
+        int age = Convert.ToInt32(Console.ReadLine());
 
-        Console.Write("Ingrese un número N: ");
-        n = Convert.ToInt32(Console.ReadLine());
-
-        while (i <= n)
+        if (age >= 18)
         {
-            suma += i;
-            i++;
+            Console.Write("Es mayor de edad");
         }
-
-        Console.Write("La suma de los números " + n + " número es: " + suma);
+        else
+        {
+            Console.Write("Es menor de edad");
+        }
     }
 }
 
