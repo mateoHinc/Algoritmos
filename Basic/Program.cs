@@ -4,15 +4,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Ingrese un número para ver su tabla de multiplicar: ");
-        int number = Convert.ToInt32(Console.ReadLine());
+        int n, suma = 0, i = 1;
 
-        for (int i = 1; i <= 10; i++)
+        Console.Write("Ingrese un número N: ");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        while (i <= n)
         {
-            int result = number * i;
-            Console.Write(number + " X " + i + " = " + result+"\n");
+            suma += i;
+            i++;
         }
-        
+
+        Console.Write("La suma de los números " + n + " número es: " + suma);
     }
 }
 
