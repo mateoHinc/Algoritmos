@@ -20,7 +20,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("Ambos números son iguales");
+            Console.WriteLine("¡Ambos números son iguales!");
         }
     }
 }
