@@ -12,11 +12,15 @@ class Program
 
         if (number1 > number2)
         {
-            Console.Write("El "+number1+" es mayor que "+number2);
+            Console.WriteLine($"El {number1} es mayor que {number2}");
+        }
+        else if (number2 > number1)
+        {
+            Console.WriteLine($"El {number2} es mayor que {number1}");
         }
         else
         {
-            Console.Write("El "+number2+" es mayor que "+number1);
+            Console.WriteLine("¡Ambos números son iguales!");
         }
     }
 }
