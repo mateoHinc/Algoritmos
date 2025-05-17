@@ -4,29 +4,26 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Ingrese un carácter: ");
-        string? input = Console.ReadLine();
+        Console.Write("Ingrese un número: ");
+        int number = Convert.ToInt32(Console.ReadLine());
 
-        if (string.IsNullOrEmpty(input) || input.Length != 1)
+        number = Math.Abs(number); // Números negativos y convertirlos en valor absoluto
+
+        if (number >= 10 && number <= 99)
         {
-            Console.WriteLine("\nDebe ingresar solo un cáracter.");
+            Console.WriteLine($"\nEl número {number} tiene 2 cifras.");
+        }
+        else if (number >= 100 && number <= 999)
+        {
+            Console.WriteLine($"\nEl número {number} tiene 3 cifras.");
+        }
+        else if (number >= 0 && number <= 9)
+        {
+            Console.WriteLine($"\n El número {number} tiene 1 cifra.");
         }
         else
         {
-            char letter = Char.ToLower(input[0]);
-
-            if (!Char.IsLetter(letter))
-            {
-                Console.WriteLine($"\n {letter} no es una letra del alfabeto.");
-            }
-            else if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u')
-            {
-                Console.WriteLine($"\n {letter} es una vocal.");
-            }
-            else
-            {
-                Console.WriteLine($"\n {letter} es una consonante.");
-            }
+            Console.WriteLine($"\nEl número {number} tiene más de 3 cifras.");
         }
     }
 }
