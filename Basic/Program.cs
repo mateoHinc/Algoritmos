@@ -4,28 +4,23 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Ingrese la calificación: ");
-        int nota = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Ingrese el primer número: ");
+        int number1 = Convert.ToInt32(Console.ReadLine());
 
-        if (nota == 5)
+        Console.Write("Ingrese el segundo número: ");
+        int number2 = Convert.ToInt32(Console.ReadLine());
+
+        if (number1 == 0 || number2 == 0)
         {
-            Console.WriteLine($"\nExcelente");
+            Console.WriteLine($"\nNo se puede dividir entre cero.");
         }
-        else if (nota == 4)
+        else if (number1 % number2 == 0)
         {
-            Console.WriteLine($"\nBueno");
-        }
-        else if (nota == 3)
-        {
-            Console.WriteLine($"\nRegular");
-        }
-        else if (nota >= 0 && nota <= 2)
-        {
-            Console.WriteLine($"\nMalo");
+            Console.WriteLine($"\nEl número {number1} es divisible entre {number2}");
         }
         else
         {
-            Console.WriteLine($"\nCalificación no válida, debe estar entre 0 y 5");
+            Console.WriteLine($"\nNinguno es divisible exactamente entre el otro");
         }
     }
 }
