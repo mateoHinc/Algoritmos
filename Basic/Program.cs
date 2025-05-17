@@ -4,23 +4,29 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Ingrese el primer número: ");
-        int number1 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Ingrese un carácter: ");
+        string? input = Console.ReadLine();
 
-        Console.Write("Ingrese el segundo número: ");
-        int number2 = Convert.ToInt32(Console.ReadLine());
-
-        if (number1 == 0 || number2 == 0)
+        if (string.IsNullOrEmpty(input) || input.Length != 1)
         {
-            Console.WriteLine($"\nNo se puede dividir entre cero.");
-        }
-        else if (number1 % number2 == 0)
-        {
-            Console.WriteLine($"\nEl número {number1} es divisible entre {number2}");
+            Console.WriteLine("\nDebe ingresar solo un cáracter.");
         }
         else
         {
-            Console.WriteLine($"\nNinguno es divisible exactamente entre el otro");
+            char letter = Char.ToLower(input[0]);
+
+            if (!Char.IsLetter(letter))
+            {
+                Console.WriteLine($"\n {letter} no es una letra del alfabeto.");
+            }
+            else if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u')
+            {
+                Console.WriteLine($"\n {letter} es una vocal.");
+            }
+            else
+            {
+                Console.WriteLine($"\n {letter} es una consonante.");
+            }
         }
     }
 }
