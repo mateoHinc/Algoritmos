@@ -4,20 +4,28 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Ingrese un número: ");
-        int number = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Ingrese la calificación: ");
+        int nota = Convert.ToInt32(Console.ReadLine());
 
-        if (number >= 10 && number <= 50)
+        if (nota == 5)
         {
-            Console.WriteLine($"\nEl número {number} está entre el rango de 10 y 50 (Inclusive)");
+            Console.WriteLine($"\nExcelente");
         }
-        else if (number < 10)
+        else if (nota == 4)
         {
-            Console.WriteLine($"\nEl número {number} es menor que 10");
+            Console.WriteLine($"\nBueno");
+        }
+        else if (nota == 3)
+        {
+            Console.WriteLine($"\nRegular");
+        }
+        else if (nota >= 0 && nota <= 2)
+        {
+            Console.WriteLine($"\nMalo");
         }
         else
         {
-            Console.WriteLine($"\nEl número {number} es mayor que 50");
+            Console.WriteLine($"\nCalificación no válida, debe estar entre 0 y 5");
         }
     }
 }
